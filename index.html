@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+	<header>
+      <a href="#" class="brand">
+      	<img src="image/logo1.jpg">
+      </a>
+      <nav class="menu">
+        <div class="btn">
+          <i class="fas fa-times close-btn"></i>
+        </div>
+        <ul>
+        	<li><a href="#">Home</a></li>
+        	<li><a href="#">Services</a></li>
+        	<li><a href="#">About</a></li>
+        	<li><a href="#">Blog</a></li>
+        	<li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="btn">
+        <i class="fas fa-bars menu-btn"></i>
+      </div>
+    </header>
+
+    <section class="section-main">
+      <h1>Menú Responsive</h1>
+    </section>
+
+    <section class="section-two">
+      <h2>Protect Rainforests</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+
+    <script type="text/javascript">
+    //javascript for navigation bar effect on scroll
+    window.addEventListener("scroll", function(){
+      var header = document.querySelector("header");
+      header.classList.toggle('down', window.scrollY > 0);
+
+	    //change logo
+	    var logo = document.querySelector(".brand img");
+		if (window.scrollY>0) {
+			logo.setAttribute('src', 'image/logo2.png');
+		}else{
+			logo.setAttribute('src', 'image/logo1.jpg');
+		}
+
+    });
+
+    //javascript for responsive navigation sidebar menu
+    var menu = document.querySelector('.menu');
+    var menuBtn = document.querySelector('.menu-btn');
+    var closeBtn = document.querySelector('.close-btn');
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.add('active');
+    });
+
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove('active');
+    });
+    </script>
+</body>
+</html>
